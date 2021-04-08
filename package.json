@@ -1,13 +1,13 @@
 {
-  "name": "@typhonjs-node-utils/config-loader",
-  "description": "Provides extensive config loading support.",
+  "name": "@typhonjs-node-utils/cosmiconfig",
+  "description": "Provides a TyphonJS plugin for config loading via `cosmiconfig`.",
   "version": "0.0.0",
   "author": "typhonrt",
-  "bugs": "https://github.com/typhonjs-node-utils/config-loader/issues",
+  "bugs": "https://github.com/typhonjs-node-utils/cosmiconfig/issues",
   "license": "MPL-2.0",
   "type": "module",
-  "main": "./src/ConfigLoader.js",
-  "module": "./src/ConfigLoader.js",
+  "main": "./src/Cosmiconfig.js",
+  "module": "./src/Cosmiconfig.js",
   "exports": {
     ".": "./src/Cosmiconfig.js"
   },
@@ -24,14 +24,12 @@
   "files": [
     "/src"
   ],
-  "homepage": "https://github.com/typhonjs-node-utils/config-loader",
+  "homepage": "https://github.com/typhonjs-node-utils/cosmiconfig",
   "keywords": [
-    "ajv",
-    "better",
-    "errors",
-    "code frame"
+    "typhonjs",
+    "cosmiconfig"
   ],
-  "repository": "typhonjs-node-utils/config-loader",
+  "repository": "typhonjs-node-utils/cosmiconfig",
   "scripts": {
     "eslint": "eslint .",
     "posttest": "npm run eslint",
