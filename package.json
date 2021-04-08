@@ -1,0 +1,41 @@
+{
+  "name": "@typhonjs-node-utils/config-loader",
+  "description": "Provides extensive config loading support.",
+  "version": "0.0.0",
+  "author": "typhonrt",
+  "bugs": "https://github.com/typhonjs-node-utils/config-loader/issues",
+  "license": "MPL-2.0",
+  "type": "module",
+  "main": "./src/ConfigLoader.js",
+  "module": "./src/ConfigLoader.js",
+  "exports": {
+    ".": "./src/Cosmiconfig.js"
+  },
+  "dependencies": {
+    "@typhonjs-node-utils/package-util": "^0.0.9",
+    "cosmiconfig": "^7.0.0"
+  },
+  "devDependencies": {
+    "@typhonjs-node-utils/build-test": "^0.1.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "/src"
+  ],
+  "homepage": "https://github.com/typhonjs-node-utils/config-loader",
+  "keywords": [
+    "ajv",
+    "better",
+    "errors",
+    "code frame"
+  ],
+  "repository": "typhonjs-node-utils/config-loader",
+  "scripts": {
+    "eslint": "eslint .",
+    "posttest": "npm run eslint",
+    "prepublishOnly": "npm run test",
+    "test": "c8 --reporter=lcov --reporter=text-summary mocha -colors \"test/src/**/*.test.js\""
+  }
+}
