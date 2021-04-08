@@ -194,7 +194,7 @@ export default class Cosmiconfig
       const defaultConfig = typeof options.defaultConfig === 'object' ? options.defaultConfig : null;
       const packageName = typeof options.packageName === 'string' ? `${options.packageName}: ` : '';
 
-      const result = await Cosmiconfig.openConfig(options);
+      const result = await this.openConfig(options);
 
       if (result !== null)
       {
