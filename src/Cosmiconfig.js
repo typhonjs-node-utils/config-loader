@@ -34,7 +34,7 @@ const s_DEFAULT_SEARCH_PLACES = (moduleName) => [
 /**
  * Provides a TyphonJS plugin using comsiconfig to load config files including extensible support.
  */
-export class Cosmiconfig
+export default class Cosmiconfig
 {
    /**
     * Uses cosmiconfig to attempt to load a local configuration file based on a module name. Other plugins may
