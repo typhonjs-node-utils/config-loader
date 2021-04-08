@@ -78,7 +78,7 @@ export default class Cosmiconfig
     *
     * @returns {Promise<object|null>} An object with loaded configuration data or null.
     */
-   async openConfig(options)
+   async loadConfig(options)
    {
       if (typeof options !== 'object') { throw new TypeError(`'options' is not an 'object'`); }
       if (typeof options.moduleName !== 'string') { throw new TypeError(`'options.moduleName' is not a 'string'`); }
@@ -185,7 +185,7 @@ export default class Cosmiconfig
     *
     * @returns {Promise<object|null>} An object with loaded configuration data or null.
     */
-   async safeOpenConfig(options)
+   async loadConfigSafe(options)
    {
       if (typeof options !== 'object') { throw new TypeError(`'options' is not an 'object'`); }
       if (typeof options.moduleName !== 'string') { throw new TypeError(`'options.moduleName' is not a 'string'`); }
@@ -194,7 +194,7 @@ export default class Cosmiconfig
       const defaultConfig = typeof options.defaultConfig === 'object' ? options.defaultConfig : null;
       const packageName = typeof options.packageName === 'string' ? `${options.packageName}: ` : '';
 
-      const result = await this.openConfig(options);
+      const result = await this.loadConfig(options);
 
       if (result !== null)
       {
@@ -247,8 +247,8 @@ export default class Cosmiconfig
    {
       this._eventbus = ev.eventbus;
 
-      this._eventbus.on(`typhonjs:oclif:system:file:util:config:open`, this.openConfig, this);
-      this._eventbus.on(`typhonjs:oclif:system:file:util:config:open:safe`, this.safeOpenConfig, this);
+      this._eventbus.on(`typhonjs:system:cosmiconfig:config:load`, this.loadConfig, this);
+      this._eventbus.on(`typhonjs:system:cosmiconfig:config:load:safe`, this.loadConfigSafe, this);
    }
 }
 
