@@ -1,7 +1,7 @@
 import path                from 'path';
 import url                 from 'url';
 
-import { getPackageType }  from '@typhonjs-node-utils/package-util';
+import { getPackageType }  from '@typhonjs-utils/package-json';
 
 /**
  * Uses `getPackageType` to determine if `type` is set to 'module. If so loads '.js' files as ESM otherwise uses

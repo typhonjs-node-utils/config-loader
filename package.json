@@ -1,8 +1,8 @@
 {
-  "name": "@typhonjs-node-utils/cosmiconfig",
+  "name": "@typhonjs-utils/cosmiconfig",
   "description": "Provides a TyphonJS plugin for config loading via `cosmiconfig`.",
   "version": "0.0.0",
-  "author": "typhonrt",
+  "author": "Michael Leahy <support@typhonjs.io> (https://github.com/typhonrt)",
   "bugs": "https://github.com/typhonjs-node-utils/cosmiconfig/issues",
   "license": "MPL-2.0",
   "type": "module",
@@ -11,12 +11,15 @@
   "exports": {
     ".": "./src/Cosmiconfig.js"
   },
+  "contributors": [
+    "Michael Leahy <support@typhonjs.io> (https://github.com/typhonrt)"
+  ],
   "dependencies": {
-    "@typhonjs-node-utils/package-util": "^0.0.9",
+    "@typhonjs-utils/package-json": "^0.0.10",
     "cosmiconfig": "^7.0.0"
   },
   "devDependencies": {
-    "@typhonjs-node-utils/build-test": "^0.1.0"
+    "@typhonjs-utils/build-test": "^0.1.0"
   },
   "engines": {
     "node": ">=14.0.0"
@@ -27,9 +30,10 @@
   "homepage": "https://github.com/typhonjs-node-utils/cosmiconfig",
   "keywords": [
     "typhonjs",
+    "utils",
     "cosmiconfig"
   ],
-  "repository": "typhonjs-node-utils/cosmiconfig",
+  "repository": "github:typhonjs-node-utils/cosmiconfig",
   "scripts": {
     "eslint": "eslint .",
     "posttest": "npm run eslint",

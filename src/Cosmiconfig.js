@@ -91,7 +91,7 @@ export default class Cosmiconfig
 
       // Make a request for any externally provided cosmiconfig plugin support.
       const remoteCosmic = this._eventbus !== void 0 ? await this._eventbus.triggerAsync(
-       'typhonjs:util:cosmiconfig:config:support:get', moduleName) : void 0;
+       'typhonjs:utils:cosmiconfig:config:support:get', moduleName) : void 0;
 
       let mergeCosmic = [];
 
@@ -247,8 +247,8 @@ export default class Cosmiconfig
    {
       this._eventbus = ev.eventbus;
 
-      this._eventbus.on(`typhonjs:util:cosmiconfig:config:load`, this.loadConfig, this);
-      this._eventbus.on(`typhonjs:util:cosmiconfig:config:load:safe`, this.loadConfigSafe, this);
+      this._eventbus.on(`typhonjs:utils:cosmiconfig:config:load`, this.loadConfig, this, true);
+      this._eventbus.on(`typhonjs:utils:cosmiconfig:config:load:safe`, this.loadConfigSafe, this, true);
    }
 }
 
