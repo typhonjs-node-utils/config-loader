@@ -1,2 +1,2 @@
-# @typhonjs-node-utils/cosmiconfig
+# @typhonjs-utils/cosmiconfig
 Provides a TyphonJS plugin for config loading via `cosmiconfig`.
