@@ -37,7 +37,7 @@
   "scripts": {
     "eslint": "eslint .",
     "posttest": "npm run eslint",
-    "prepublishOnly": "npm run test",
+    "prepublishOnly": "npm run eslint",
     "test": "c8 --reporter=lcov --reporter=text-summary mocha -colors \"test/src/**/*.test.js\""
   }
 }
