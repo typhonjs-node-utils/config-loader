@@ -1,54 +1,13 @@
-import path                from 'path';
-import url                 from 'url';
+import ModuleLoader  from '@typhonjs-utils/loader-module';
 
-import { getPackageType }  from '@typhonjs-utils/package-json';
-
-/**
- * Uses `getPackageType` to determine if `type` is set to 'module. If so loads '.js' files as ESM otherwise uses
- * a bare require to load as CJS. Also loads '.mjs' files as ESM.
- *
- * Uses dynamic import to load ESM files.
- *
- * @param {string}   filepath - File path to load.
- *
- * @returns {Promise<*>} The imported default ESM export or CJS file by require.
- */
-export default async (filepath) =>
+export default async (modulepath) =>
 {
-   const extension = path.extname(filepath).toLowerCase();
+   const result = await ModuleLoader.load(modulepath);
 
-   switch (extension)
+   if (!('default' in result.module))
    {
-      case '.js':
-         // Attempt to load `.js` file as ESM if 'package.type' is 'module'.
-         if (getPackageType({ filepath }) === 'module')
-         {
-            return esmLoader(filepath);
-         }
-
-         // Otherwise use require and consider it CJS.
-         return require(filepath);
-
-      case '.mjs':
-         return esmLoader(filepath);
-   }
-};
-
-/**
- * Uses dynamic import to load an ES Module. The module must have a default export.
- *
- * @param {string}   modulePath - The module path.
- *
- * @returns {Promise<*>} The imported default ESM export.
- */
-async function esmLoader(modulePath)
-{
-   const module = await import(url.pathToFileURL(modulePath));
-
-   if (!('default' in module))
-   {
-      throw new Error(`${modulePath} has no default export.`);
+      throw new Error(`No default export: ${modulepath}`);
    }
 
-   return module.default;
+   return result.module.default;
 }

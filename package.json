@@ -15,7 +15,7 @@
     "Michael Leahy <support@typhonjs.io> (https://github.com/typhonrt)"
   ],
   "dependencies": {
-    "@typhonjs-utils/package-json": "^0.0.10",
+    "@typhonjs-utils/loader-module": "^0.0.1",
     "cosmiconfig": "^7.0.0"
   },
   "devDependencies": {
