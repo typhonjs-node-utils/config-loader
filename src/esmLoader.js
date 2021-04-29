@@ -10,4 +10,4 @@ export default async (modulepath) =>
    }
 
    return result.module.default;
-}
+};
