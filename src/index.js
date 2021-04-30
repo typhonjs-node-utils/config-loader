@@ -1,4 +1,4 @@
-import Cosmiconfig from './Cosmiconfig';
+import Cosmiconfig from './Cosmiconfig.js';
 
 export { Cosmiconfig };
 
