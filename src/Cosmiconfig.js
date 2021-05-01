@@ -1,6 +1,6 @@
 import path             from 'path';
 
-import { cosmiconfig }  from 'cosmiconfig';
+import CC               from 'cosmiconfig';
 
 import esmLoader        from './esmLoader.js';
 
@@ -133,7 +133,7 @@ export default class Cosmiconfig
          searchPlaces: searchPlacesMerge
       };
 
-      const explorer = cosmiconfig(moduleName, cosmicOptions);
+      const explorer = CC.cosmiconfig(moduleName, cosmicOptions);
 
       let result = null;
 
