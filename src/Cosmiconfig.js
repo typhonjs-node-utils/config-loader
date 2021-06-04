@@ -247,8 +247,8 @@ export default class Cosmiconfig
    {
       this._eventbus = ev.eventbus;
 
-      this._eventbus.on(`typhonjs:utils:cosmiconfig:config:load`, this.loadConfig, this, true);
-      this._eventbus.on(`typhonjs:utils:cosmiconfig:config:load:safe`, this.loadConfigSafe, this, true);
+      this._eventbus.on(`typhonjs:utils:cosmiconfig:config:load`, this.loadConfig, this, { guard: true });
+      this._eventbus.on(`typhonjs:utils:cosmiconfig:config:load:safe`, this.loadConfigSafe, this, { guard: true });
    }
 }
 
