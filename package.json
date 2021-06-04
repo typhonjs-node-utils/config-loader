@@ -1,7 +1,7 @@
 {
   "name": "@typhonjs-utils/cosmiconfig",
   "description": "Provides a TyphonJS plugin for config loading via `cosmiconfig`.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Michael Leahy <support@typhonjs.io> (https://github.com/typhonrt)",
   "bugs": "https://github.com/typhonjs-node-utils/cosmiconfig/issues",
   "license": "MPL-2.0",
