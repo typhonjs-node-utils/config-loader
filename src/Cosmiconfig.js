@@ -239,7 +239,7 @@ export default class Cosmiconfig
     *
     * @param {object} ev - PluginEvent - The plugin event.
     *
-    * @see https://www.npmjs.com/package/typhonjs-plugin-manager
+    * @see https://www.npmjs.com/package/@typhonjs-plugin/manager
     *
     * @ignore
     */
@@ -247,8 +247,18 @@ export default class Cosmiconfig
    {
       this._eventbus = ev.eventbus;
 
-      this._eventbus.on(`typhonjs:utils:cosmiconfig:config:load`, this.loadConfig, this, { guard: true });
-      this._eventbus.on(`typhonjs:utils:cosmiconfig:config:load:safe`, this.loadConfigSafe, this, { guard: true });
+      const options = ev.pluginOptions;
+
+      let guard = true;
+
+      // Apply any plugin options.
+      if (typeof options === 'object')
+      {
+         if (typeof options.guard === 'boolean') { guard = options.guard; }
+      }
+
+      this._eventbus.on(`typhonjs:utils:cosmiconfig:config:load`, this.loadConfig, this, { guard });
+      this._eventbus.on(`typhonjs:utils:cosmiconfig:config:load:safe`, this.loadConfigSafe, this, { guard });
    }
 }
 
