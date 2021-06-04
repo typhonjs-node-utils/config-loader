@@ -1,15 +1,16 @@
 {
   "name": "@typhonjs-utils/cosmiconfig",
   "description": "Provides a TyphonJS plugin for config loading via `cosmiconfig`.",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "Michael Leahy <support@typhonjs.io> (https://github.com/typhonrt)",
   "bugs": "https://github.com/typhonjs-node-utils/cosmiconfig/issues",
   "license": "MPL-2.0",
   "type": "module",
-  "main": "./src/index.js",
-  "module": "./src/index.js",
+  "main": "src/Cosmiconfig.js",
+  "module": "src/Cosmiconfig.js",
   "exports": {
-    ".": "./src/index.js"
+    ".": "./src/Cosmiconfig.js",
+    "./plugin": "./src/plugin.js"
   },
   "contributors": [
     "Michael Leahy <support@typhonjs.io> (https://github.com/typhonrt)"
@@ -22,7 +23,7 @@
     "@typhonjs-utils/build-test": "^0.1.0"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=12.0.0"
   },
   "files": [
     "/src"
