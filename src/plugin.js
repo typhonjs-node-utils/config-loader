@@ -1,5 +1,4 @@
 import Cosmiconfig from './Cosmiconfig.js';
 
-export { Cosmiconfig };
-
+// Provide a new instance as a plugin.
 export default new Cosmiconfig();
